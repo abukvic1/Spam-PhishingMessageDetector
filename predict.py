@@ -22,9 +22,12 @@ while True:
     indeks = list(model.classes_).index(rezultat)
     sigurnost = vjerovatnoce[indeks] * 100
 
-    if rezultat == "spam":
-        print("Rezultat: SPAM")
-    else:
-        print("Rezultat: NORMALNA PORUKA")
+if rezultat == "spam":
+    print("Rezultat: SPAM")
+else:
+    print("Rezultat: NORMALNA PORUKA")
 
-    print(f"Sigurnost: {sigurnost:.2f}%")
+print(f"Sigurnost: {sigurnost:.2f}%")
+
+if sigurnost < 70:
+    print("Upozorenje: Model nije potpuno siguran u ovu procjenu.")
